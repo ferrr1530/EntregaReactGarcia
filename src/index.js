@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Landing from './Landing';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ContactView from './components/Contact/ContactView';
+import AutoDetail from './components/AutoDetail/AutoDetail';
+import Auto from './components/Autos/Autos';
 
 
 
@@ -14,7 +15,8 @@ root.render(
   <BrowserRouter>
 
   <Routes>
-        <Route exact path="/" element={<Landing />} />
+        <Route exact path="/" element={<Auto />} />
+        <Route exact path="/auto/:id" element={<AutoDetail />} />
         <Route exact path="contact" element={<ContactView />} />
   </Routes>
 

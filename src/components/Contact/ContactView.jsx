@@ -1,41 +1,42 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 
+
 const ContactView = () => {
   return (
 <>
-    <Navbar />
+    < Navbar />
 
-    <form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
+    <form style={{backgroundColor:'orange', padding: 60}}>
+  <div className='form-row'>
+    <div className='form-group col-md-6'>
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email"/>
+      <input type="email" className='form-control' id="inputEmail4" placeholder="Email"/>
     </div>
-    <div class="form-group col-md-6">
+    <div className='form-group col-md-6'>
       <label for="inputPassword4">Contraseña</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password"/>
+      <input type="password" className='form-control' id="inputPassword4" placeholder="Password"/>
     </div>
   </div>
-  <div class="form-group">
+  <div className='form-group'>
     <label for="inputAddress">Direccion Particular</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"/>
+    <input type="text" className='form-control' id="inputAddress" placeholder="1234 Main St"/>
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
+  <div className='form-row'>
+    <div className='form-group col-md-6'>
       <label for="inputCity">Ciudad</label>
-      <input type="text" class="form-control" id="inputCity"/>
+      <input type="text" className='form-control' id="inputCity"/>
     </div>
   </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck"/>
-      <label class="form-check-label" for="gridCheck">
+  <div className='form-group'>
+    <div className='form-check'>
+      <input className='form-check-input' type="checkbox" id="gridCheck"/>
+      <label className='form-check-label' for="gridCheck">
         Estoy de acuerdo
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
+  <button type="submit" className='btn btn-primary'>Enviar</button>
 </form>
 </>
   )
