@@ -23,9 +23,9 @@ const Autos = () => {
     <h1>Lista de Autos</h1>
     <ul style={{margin: 0, padding: 0, color: 'blue' }}>
                {
-                autosList?.map((autos, index) =>(
+                autosList?.map((auto, index) =>(
                   <li style={{backgroundColor: 'green', padding: '15px', margin: '10px 0', borderRadius: '5px' }}>
-                    <Link to={`/auto/${index+1}`}>{autos.title} </Link>
+                    <Link to={`/auto/${index+1}`}>{auto.title} </Link>
                   </li>
                 ))
                }
