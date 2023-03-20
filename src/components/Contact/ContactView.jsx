@@ -1,12 +1,10 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
+
 
 
 const ContactView = () => {
   return (
 <>
-    < Navbar />
-
     <form style={{backgroundColor:'orange', padding: 60}}>
   <div className='form-row'>
     <div className='form-group col-md-6'>

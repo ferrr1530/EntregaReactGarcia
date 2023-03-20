@@ -3,11 +3,8 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 import CartWidget from '../CartWidget/CartWidget'
 
-
 const Navbar = () => {
   
-
-
   return (
     <>
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -18,7 +15,16 @@ const Navbar = () => {
   <div className='collapse navbar-collapse' id="navbarNav">
     <ul className='navbar-nav'>
       <li className='nav-item'>
-         <Link to={'/'}>Inicio</Link>
+         <Link activeClassName={"active"} to={'/'}>Productos</Link>
+      </li>
+      <li className='nav-item'>
+         <Link activeClassName={"active"} to={'/category/hamburguesas'}>Hamburguesas</Link>
+      </li>
+      <li className='nav-item'>
+         <Link activeClassName={"active"} to={'/category/papas'}>Papas Fritas</Link>
+      </li>
+      <li className='nav-item'>
+         <Link activeClassName={"active"} to={'/category/postres'}>Postres</Link>
       </li>
       <li className='nav-item'>
          <Link to={'/contact'}>Contactanos</Link>

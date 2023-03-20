@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ContactView from './components/Contact/ContactView';
-import AutoDetail from './components/AutoDetail/AutoDetail';
-import Auto from './components/Autos/Autos';
+import Landing from './Landing';
 
 
 
@@ -12,15 +9,7 @@ root.render(
 
   
   <React.StrictMode>
-  <BrowserRouter>
-
-  <Routes>
-        <Route exact path="/" element={<Auto />} />
-        <Route exact path="/auto/:id" element={<AutoDetail />} />
-        <Route exact path="contact" element={<ContactView />} />
-  </Routes>
-
-  </BrowserRouter>
+    < Landing />
   </React.StrictMode>
   
 );
