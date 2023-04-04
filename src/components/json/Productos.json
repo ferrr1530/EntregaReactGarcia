@@ -1,8 +1,8 @@
 [
-{"index":1, "nombre":"McNifica","calorias":315,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqXXaUUP/200/200/original?country=ar","precio":1300,"categoria":"hamburguesas"},
-{"index":2, "nombre":"Sundae Dulce de Leche","calorias":260,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$sundae-dulce-de-leche.png/200/200/original?country=ar","precio":350,"categoria":"postres"},
-{"index":3, "nombre":"McPollo","calorias":360,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXQzmQj/200/200/original?country=ar","precio":1300,"categoria":"hamburguesas"},
-{"index":4, "nombre":"Papas Medianas","calorias":300,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXmVCCk/200/200/original?country=ar","precio":500,"categoria":"papas"},
-{"index":5, "nombre":"Papas Grandes","calorias":340,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXXQgnB/200/200/original?country=ar","precio":800,"categoria":"papas"},
-{"index":6, "nombre":"Coca Cola Grande","calorias":400,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcX6zxgK/200/200/original?country=ar","precio":500,"categoria":"bebidas"}
+{"index":1, "nombre":"McNifica","calorias":315,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqXXaUUP/200/200/original?country=ar","precio":1300, "stock": 8,"categoria":"hamburguesas"},
+{"index":2, "nombre":"Sundae Dulce de Leche","calorias":260,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$sundae-dulce-de-leche.png/200/200/original?country=ar","precio":350,"stock":7, "categoria":"postres"},
+{"index":3, "nombre":"McPollo","calorias":360,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXQzmQj/200/200/original?country=ar","precio":1300,"stock":8, "categoria":"hamburguesas"},
+{"index":4, "nombre":"Papas Medianas","calorias":300,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXmVCCk/200/200/original?country=ar","precio":500,"stock":5,"categoria":"papas"},
+{"index":5, "nombre":"Papas Grandes","calorias":340,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcXXQgnB/200/200/original?country=ar","precio":800,"stock":4,"categoria":"papas"},
+{"index":6, "nombre":"Coca Cola Grande","calorias":400,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kcX6zxgK/200/200/original?country=ar","precio":500,"stock:":3,"categoria":"bebidas"}
 ]
