@@ -1,43 +1,48 @@
-import {createContext, useState} from 'react'
+import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-const CartContextProvider = ({children}) => {
-  const [cart, setCart] = useState([]);
+const CartProvider = ({children}) => {
+    const [cart, setCart] = useState([]);
 
-  const addItem = (item, quantity) => {
-    if (isInCart(item.index)){
-        let pos = cart.findIndex(x => x.index === item.index);
-        cart[pos].quantity += quantity;
-        setCart([...cart]);
-    }else{
-        setCart([...cart,{...item, quantity:quantity}]);
+    const addItem = (item, quantity) => {
+        if (isInCart(item.idp)) {
+            let index = cart.findIndex(prod => prod.idp === item.idp);
+            cart[index].quantity += quantity;
+            setCart([...cart]);
+        }else {
+            setCart([...cart, {...item, quantity:quantity}]);
+        }
     }
-  }
-  const removeItem = (itemId) =>{
-    const items = cart.filter(item => item.index !== itemId);
-    setCart([...items]);
-  }
-  const clear = () =>{
-    setCart([]);
-  }
-  const isInCart = (itemId) => {
-    return cart.some(item => item.index === itemId);
-  }
-  
-  const cartTotal = () =>{
-    return cart.reduce((accum, item) => accum += item.quantity, 0);
-  }
 
-  const cartSum = () =>{
-    return cart.reduce((accum, item) => accum += item.quantity * item.precio , 0);
-  }
-  
-  return (
-    < cartContextProvider value={{cart, addItem, removeItem, clear, cartTotal, cartSum}}>
-     {children}
-    </cartContextProvider>
-  )
+    const removeItem = (itemId) => {
+     const newItem = cart.filter(cartItem => cartItem.id !== itemId)
+     setCart([...newItem]);
+     console.log(newItem)
+    }
+
+    const clear = () => {
+        setCart([]);
+    }
+
+    const isInCart = (itemId) => {
+        return cart.some(cartItem => cartItem.idp === itemId)
+    }
+
+    const totalCart = () => {
+        return cart.reduce((accum, item) => accum += item.quantity, 0);
+    }
+
+    const totalAPagar = () => {
+        return cart.reduce((accum, item) => accum += item.quantity * item.precio, 0);
+    }
+
+
+    return (
+        <CartContext.Provider value={{cart, addItem, removeItem, clear, totalCart, totalAPagar}}>
+            {children}
+        </CartContext.Provider>
+    )
 }
 
-export default CartContextProvider;
+export default CartProvider;
