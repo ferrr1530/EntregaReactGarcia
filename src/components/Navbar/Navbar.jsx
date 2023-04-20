@@ -18,7 +18,7 @@ const Navbar = () => {
          <Link activeClassName={"active"} to={'/'}>Productos</Link>
       </li>
       <li className='nav-item'>
-         <Link activeClassName={"active"} to={'/category/hamburguesas'}>Hamburguesas</Link>
+         <Link activeClassName={"active"} to={'/category/comida'}>Comida</Link>
       </li>
       <li className='nav-item'>
          <Link activeClassName={"active"} to={'/category/papas'}>Papas Fritas</Link>

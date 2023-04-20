@@ -6,8 +6,8 @@ const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
 
     const addItem = (item, quantity) => {
-        if (isInCart(item.idp)) {
-            let index = cart.findIndex(prod => prod.idp === item.idp);
+        if (isInCart(item.id)) {
+            let index = cart.findIndex(prod => prod.id === item.id);
             cart[index].quantity += quantity;
             setCart([...cart]);
         }else {
@@ -26,7 +26,7 @@ const CartProvider = ({children}) => {
     }
 
     const isInCart = (itemId) => {
-        return cart.some(cartItem => cartItem.idp === itemId)
+        return cart.some(cartItem => cartItem.index === itemId)
     }
 
     const totalCart = () => {
