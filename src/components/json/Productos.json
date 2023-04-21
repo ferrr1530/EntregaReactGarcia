@@ -1,14 +1,14 @@
 [
 {"index":1, "nombre":"Lomo clásico","calorias":450,"imagen":"https://betos.com.ar/wp-content/uploads/2019/08/betos-lomo.png","precio":1000, "stock": 8,"categoria":"comida"},
 {"index":2, "nombre":"Sundae Dulce de Leche","calorias":260,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$sundae-dulce-de-leche.png/200/200/original?country=ar","precio":350,"stock":7, "categoria":"postres"},
-{"index":3, "nombre":"Lomo LG","calorias":650,"imagen":"https://media-cdn.tripadvisor.com/media/photo-s/0c/44/19/e7/lomo-clasico.jpg","precio":1300,"stock":8, "categoria":"comida"},
+{"index":3, "nombre":"Lomo FG","calorias":650,"imagen":"https://media-cdn.tripadvisor.com/media/photo-s/0c/44/19/e7/lomo-clasico.jpg","precio":1300,"stock":8, "categoria":"comida"},
 {"index":4, "nombre":"Papas Medianas","calorias":300,"imagen":"https://www.puntoqpack.com/1022-large_default/petaca-para-patatas-fritas-carton-kraft-mediana.jpg","precio":500,"stock":5,"categoria":"papas"},
-{"index":5, "nombre":"Papas Grandes","calorias":340,"imagen":"https://tofuu.getjusto.com/orioneat-prod-resized/uALq2KgbAj2kRqRvA-1200-1200.webp","precio":800,"stock":4,"categoria":"papas"},
-{"index":6, "nombre":"Coca Cola Grande 1.5L","calorias":700,"imagen":"https://static.wixstatic.com/media/d2b1c5_d858b74ff2534bdc98694e72c576fbe0~mv2_d_1600_1600_s_2.jpg/v1/fill/w_1600,h_1600,al_c,q_85/d2b1c5_d858b74ff2534bdc98694e72c576fbe0~mv2_d_1600_1600_s_2.jpg","precio":700,"stock:":3,"categoria":"bebidas"},
+{"index":5, "nombre":"Papas Grandes","calorias":340,"imagen":"https://tofuu.getjusto.com/orioneat-prod-resized/uALq2KgbAj2kRqRvA-1200-1200.webp","precio":650,"stock":4,"categoria":"papas"},
+{"index":6, "nombre":"Coca Cola Grande 1.5L","calorias":700,"imagen":"https://static.wixstatic.com/media/d2b1c5_d858b74ff2534bdc98694e72c576fbe0~mv2_d_1600_1600_s_2.jpg/v1/fill/w_1600,h_1600,al_c,q_85/d2b1c5_d858b74ff2534bdc98694e72c576fbe0~mv2_d_1600_1600_s_2.jpg","precio":700,"stock":3, "categoria":"bebidas"},
 {"index":7, "nombre":"Pizza muzzarella","calorias":950,"imagen":"https://nuestracarta.com.ar/wp-content/uploads/2021/06/Pizza-Muzzarella.jpg","precio":1150, "stock": 10,"categoria":"comida"},
-{"index":8, "nombre":"Coca Cola chica 500ml","calorias":300,"imagen":"https://www.casa-segal.com/wp-content/uploads/2020/03/coca-cola-500cc-almacen-gaseosas-casa-segal-mendoza-600x600.jpg","precio":450,"stock:":8,"categoria":"bebidas"},
+{"index":8, "nombre":"Coca Cola chica 500ml","calorias":300,"imagen":"https://www.casa-segal.com/wp-content/uploads/2020/03/coca-cola-500cc-almacen-gaseosas-casa-segal-mendoza-600x600.jpg","precio":450,"stock":8, "categoria":"bebidas"},
 {"index":9, "nombre":"Hamburguesa chica","calorias":450,"imagen":"https://cache-backend-mcd.mcdonaldscupones.com/media/image/product$kqX8TYcp/200/200/original?country=ar","precio":600, "stock": 12,"categoria":"comida"},
-{"index":10, "nombre":"Hamburguesa LG","calorias":750,"imagen":"https://i.pinimg.com/originals/03/ef/cc/03efcc56e44728357b07399e44c0121c.png","precio":900, "stock": 10,"categoria":"comida"},
-{"index":11, "nombre":"Pizza especial LG","calorias":1050,"imagen":"https://deliverybrandsen.com/wp-content/uploads/2021/11/pizza.png","precio":1350, "stock": 6,"categoria":"comida"},
+{"index":10, "nombre":"Hamburguesa FG","calorias":750,"imagen":"https://i.pinimg.com/originals/03/ef/cc/03efcc56e44728357b07399e44c0121c.png","precio":900, "stock": 10,"categoria":"comida"},
+{"index":11, "nombre":"Pizza especial FG","calorias":1050,"imagen":"https://deliverybrandsen.com/wp-content/uploads/2021/11/pizza.png","precio":1350, "stock": 6,"categoria":"comida"},
 {"index":12, "nombre":"Palitos de agua","calorias":100,"imagen":"https://frioteka.com/assets/productos/wtmk/3304.jpg","precio":150,"stock":15, "categoria":"postres"}
 ]

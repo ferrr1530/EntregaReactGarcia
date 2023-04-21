@@ -23,7 +23,7 @@ function Landing () {
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="contact" element={<ContactView />} />
   </Routes>
-  < ItemContainer greeting="Bienvenidos a la tienda F/G"/>
+  < ItemContainer greeting="Bienvenidos al restaurante F/G"/>
   </div>
   </BrowserRouter>
   </CartContextProvider>

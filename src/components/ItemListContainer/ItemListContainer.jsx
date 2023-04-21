@@ -1,32 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import ItemList from '../ItemList';
-import arrayProductos from '../json/Productos.json';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemList from "../ItemList";
+import Loading from "../Loading";
 
-const ItemListContainer = () => {
+import { collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 
-     const [items, setItems] = useState([]);
-     const {id} = useParams();
-    
-     useEffect(() => {
-      const promesa= new Promise((resolve) => {
-        setTimeout (() =>{
-             resolve (id ? arrayProductos.filter(item => item.categoria === id) : arrayProductos);
-        },2000);
-     });
+const ItemlistContainer = () => {
+    const [items, setItems] = useState([])
+    const {id} = useParams()
+    const [loadin, setLoadin] = useState(true)
 
-     promesa.then ((respuesta)=>{
-            setItems(respuesta);
-     })
-     }, [id]);
-     
-  return (
-    <>
-    <div className='container'>
-     < ItemList items={items} />
-    </div>
-    </>
-  )
+    useEffect(() => {
+        const db = getFirestore();
+        const itemsCollection = collection(db, "items");
+        const queryy = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
+        getDocs(queryy).then(prod => {
+            setItems(prod.docs.map(prods => ({id:prods.id, ...prods.data()})))
+            setLoadin(false)
+        })
+    }, [id])
+
+
+    return (
+        <div>
+        {loadin ? <Loading /> : <ItemList items={items} /> }
+        </div>
+        
+    )
+
 }
 
-export default ItemListContainer
+
+export default ItemlistContainer;

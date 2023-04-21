@@ -13,7 +13,7 @@ const ItemDetail = ({item}) => {
     <div className='container'>
         <div className='row my-5'>
             <div className='col d-flex aling-items-center justify-content-end'>
-            <img src={item.imagen} alt={item.nombre} />
+            <img width={450} height={350} src={item.imagen} alt={item.nombre} />
             </div>
         <div className='col d-flex aling-items-center'>
             <div>

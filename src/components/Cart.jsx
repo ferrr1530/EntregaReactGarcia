@@ -1,26 +1,48 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { CartContext } from './Context/CartContext';
+import { useContext, useState } from "react";
+import { CartContext } from "./Context/CartContext";
+import {addDoc, collection, getFirestore} from "firebase/firestore";
 
 
-const Cart = () => {
-    const {cart, totalCart, removeItem, clear, totalAPagar} = useContext(CartContext);
+const Checkout = () => {
+    const [nombre, setNombre] = useState("");
+    const [email, setEmail] = useState("");
+    const [celular, setCelular] = useState("")
+    const [orderId, setOrderId] = useState("")
+    const {cart, clear, totalAPagar} = useContext(CartContext);
 
-    if (totalCart() === 0 ) {
-        return(
-            <div className='container'>
-        <div className='row'>
-        <div className='col-md-12'>
-                 <div class="alert alert-danger" role="alert">No se encontraron productos en el carrito</div>
-        </div>
-        </div>
-        </div>
-        )
+
+
+    const generarOrden = () => {
+        const buyer = {name:nombre, email:email, phone:celular};
+        const fecha = new Date();
+        const date = `${fecha.getFullYear()}-${fecha.getMonth() + 1}-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
+        const order = {buyer:buyer, items:{cart}, date:date, total:totalAPagar()}; 
+
+        if (nombre.length !== 0 && email.length !== 0 && celular.length !== 0) {
+            const db = getFirestore();
+            const ordersCollection = collection(db, "orders");
+            addDoc(ordersCollection, order).then(data => {
+                setOrderId(data.id);
+                clear();
+                setNombre("")
+                setCelular("")
+                setEmail("")
+    
+            
+    
+                
+            });
+        }else {
+            <div class="alert alert-danger" role="alert">No se encontraron productos en el carrito</div>
+        }
+
+    
+
     }
+
 
     return (
         <div className="container">
-        <h1 className='text-center'>PRODUCTOS SELECCIONADOS</h1>
         <table className="table">
             <thead>
             <tr>
@@ -28,44 +50,59 @@ const Cart = () => {
                 <td>Nombre</td>
                 <td>Cantidad</td>
                 <td>Precio</td>
-                
                 <td>Subtotal</td>
                 <td>&nbsp;</td>
-                
             </tr>
             </thead>
             <tbody>
-            
                 {
                     cart.map(item =>
-                        <tr key={item.index}>
+                        <tr className="" key={item.id}>
                             
-                            <td><img src={item.imagen} alt={item.nombre} width={80}/></td>
+                            <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
                             <td>{item.nombre}</td>
                             <td>{item.quantity}</td>
                             <td>${item.precio}</td>
                             <td>${item.precio * item.quantity}</td>
-                            <td><Link onClick={() => {removeItem(item.index)}}><i className="bi bi-trash-fill"></i></Link></td>
-                            
                         </tr>
                         )
                 }
-            
             <tr>
-                <td><Link className="btn btn-danger" to={"/checkout"}>Finalizar compra</Link></td>
-                <th><button type="buttom" className="btn btn-danger" onClick={() => {clear()}}>Vaciar Carrito</button></th>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
                 <td className="text-end">Total a pagar: <b>${totalAPagar()}</b> </td>
-                
-                
                 </tr>
                 </tbody>
         </table>
+        <div className="container">
+            <form>
+                <div className="mb-3">
+                <label htmlFor="nombre" className="form-label">Nombre</label>
+                <input type="text" className="form-control" id="nombre" onInput={(e) => {
+                    setNombre(e.target.value)}} />
+                </div>
+                <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
+                <input type="text" className="form-control" id="email" onInput={(e) => {
+                    setEmail(e.target.value)}} />
+                </div>
+                <div className="mb-3">
+                <label htmlFor="celular" className="form-label">Celular</label>
+                <input type="text" className="form-control" id="celular" onInput={(e) => {
+                    setCelular(e.target.value)}} />
+                </div>
+        </form>
+        <button className="btn btn-danger" onClick={generarOrden}>Generar orden</button>
+        </div>
+        {orderId ? <div className="container">
+            <div className="row">
+                <div className="col-md-12">
+                <div className="alert alert-danger my-5" role="alert"><h4>¡Gracias por tu compra!</h4> <p>Se ha generado una orden de compra con el siguiente ID:{orderId}</p></div>
+                </div>
+            </div>
+        </div> : ""}
         </div>
         
     )
 }
 
 
-export default Cart;
+export default Checkout;
