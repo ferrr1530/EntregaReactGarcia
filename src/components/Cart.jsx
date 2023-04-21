@@ -95,7 +95,7 @@ const Checkout = () => {
         {orderId ? <div className="container">
             <div className="row">
                 <div className="col-md-12">
-                <div className="alert alert-danger my-5" role="alert"><h4>¡Gracias por tu compra!</h4> <p>Se ha generado una orden de compra con el siguiente ID:{orderId}</p></div>
+                <div className="alert alert-success my-5" role="alert"><h4>¡Gracias por tu compra!</h4> <p>Se ha generado una orden de compra con el siguiente ID:{orderId}</p></div>
                 </div>
             </div>
         </div> : ""}

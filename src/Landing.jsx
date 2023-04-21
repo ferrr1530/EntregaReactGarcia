@@ -2,7 +2,6 @@ import React from 'react'
 import ItemContainer from './components/ItemContainer'
 import Navbar from './components/Navbar/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ContactView from './components/Contact/ContactView';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import CartContextProvider from './components/Context/CartContext';
@@ -21,7 +20,6 @@ function Landing () {
         <Route exact path="/category/:id" element={<ItemListContainer />} />
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         <Route exact path="/cart" element={<Cart />} />
-        <Route exact path="contact" element={<ContactView />} />
   </Routes>
   < ItemContainer greeting="Bienvenidos al restaurante F/G"/>
   </div>
